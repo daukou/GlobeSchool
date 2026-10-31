@@ -19,7 +19,6 @@
             width: 100%;
             height: 100vh;
         }
-        /* Skrytie defaultného Leaflet loga pre čistejší dizajn (voliteľné) */
         .leaflet-control-attribution a:first-child {
             display: none; 
         }
@@ -32,29 +31,29 @@
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // 1. Definovanie hraničného obdĺžnika pre Slovensko (Juhozápad, Severovýchod)
+        // 1. Definovanie hraničného obdĺžnika pre Slovensko
         var slovakiaBounds = [
             [47.7, 16.8], 
             [49.6, 22.6]
         ];
 
-        // 2. Inicializácia mapy s obmedzeniami
+        // 2. Inicializácia mapy s obmedzeniami na Slovensko
         var map = L.map('map', {
             center: [48.6690, 19.6990],
             zoom: 8,
-            minZoom: 8, // Zabráni odialeniu na celú Európu
-            maxZoom: 16, // Zabráni príliš hlbokému priblíženiu na ulice
-            maxBounds: slovakiaBounds, // Uzamkne posun len na SR
-            maxBoundsViscosity: 1.0 // Pevný okraj, používateľ nemôže mapu "odskočiť" von
+            minZoom: 8,
+            maxZoom: 16,
+            maxBounds: slovakiaBounds,
+            maxBoundsViscosity: 1.0
         });
 
-        // 3. Moderný svetlý mapový podklad (CartoDB Positron) ideálny pre zobrazenie bodov záujmu
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-            subdomains: 'abcd',
+        // 3. Zmena na Esri Light Gray Canvas (čistý dizajn, bez API kľúča)
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
+            maxZoom: 16
         }).addTo(map);
 
-        // Ukážka pridania modernej značky (strednej školy)
+        // Ukážka pridania značky pre strednú školu
         var schoolMarker = L.circleMarker([48.73, 19.14], {
             color: '#2563eb',
             fillColor: '#3b82f6',
