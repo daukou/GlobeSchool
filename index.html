@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moja mapa Slovenska</title>
+    <title>Výber strednej školy - Mapa</title>
     
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -13,10 +13,15 @@
             margin: 0;
             padding: 0;
             height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         #map {
             width: 100%;
             height: 100vh;
+        }
+        /* Skrytie defaultného Leaflet loga pre čistejší dizajn (voliteľné) */
+        .leaflet-control-attribution a:first-child {
+            display: none; 
         }
     </style>
 </head>
@@ -27,14 +32,37 @@
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // 1. Inicializácia mapy na stred Slovenska
-        var map = L.map('map').setView([48.6690, 19.6990], 8);
+        // 1. Definovanie hraničného obdĺžnika pre Slovensko (Juhozápad, Severovýchod)
+        var slovakiaBounds = [
+            [47.7, 16.8], 
+            [49.6, 22.6]
+        ];
 
-        // 2. Použitie Esri mapového podkladu (neblokuje lokálne testovanie, bez API kľúča)
-        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-            maxZoom: 19,
-            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), GIS, and the GIS User Community'
+        // 2. Inicializácia mapy s obmedzeniami
+        var map = L.map('map', {
+            center: [48.6690, 19.6990],
+            zoom: 8,
+            minZoom: 8, // Zabráni odialeniu na celú Európu
+            maxZoom: 16, // Zabráni príliš hlbokému priblíženiu na ulice
+            maxBounds: slovakiaBounds, // Uzamkne posun len na SR
+            maxBoundsViscosity: 1.0 // Pevný okraj, používateľ nemôže mapu "odskočiť" von
+        });
+
+        // 3. Moderný svetlý mapový podklad (CartoDB Positron) ideálny pre zobrazenie bodov záujmu
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
         }).addTo(map);
+
+        // Ukážka pridania modernej značky (strednej školy)
+        var schoolMarker = L.circleMarker([48.73, 19.14], {
+            color: '#2563eb',
+            fillColor: '#3b82f6',
+            fillOpacity: 0.8,
+            radius: 8
+        }).addTo(map);
+        
+        schoolMarker.bindPopup("<b>Gymnázium Ukážkové</b><br>Zameranie: Informatika");
     </script>
 
 </body>
