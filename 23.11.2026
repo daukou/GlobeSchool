@@ -61,3 +61,80 @@
     </footer>
 </body>
 </html>
+
+--------------------------------------------------------------------------------------------------------------------
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, rgb(0, 110, 255), rgb(5, 17, 192));
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+        background: rgb(1, 112, 216);
+        h1{
+            color: white;
+            padding: 10px; 
+            text-align: center;
+        }
+    }
+
+main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        flex-grow: 1;
+        #dotaznik_tlac{
+            border-radius: 5px;
+            padding: 5px;
+            border: 0;
+            color: rgb(15, 91, 255);
+            background: white;
+            transition: 250ms;
+            &:hover{
+                background-color: rgb(201, 200, 200);
+                color: black;
+            }
+        }
+        #text1{
+            color: white;
+            font-size: 100px;
+            text-align: center;
+        }
+        
+}
+
+.tlacidla{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    gap: 20px;
+}
+.tlacidla button{
+    padding: 10px;
+    border-radius: 6px;
+    color: rgb(15, 91, 255);
+    font-weight: 700;
+    background: white;
+    border: 0;
+    transition: 250ms;
+    &:hover{
+        border-radius: 20px;
+        color: black;
+        background-color: rgb(201, 200, 200);
+    }
+}
+
+footer{
+    margin-top: auto;
+    padding: 10px;
+    background: rgb(1, 112, 216);
+}
