@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>GlobeSchool</title>
+</head>
+<body>  
+    <header>
+        <h1 id="nadpis">GlobeSchool</h1>
+    </header>
+    <main>
+        <h1 id="text1">Sprav si rychly dotaznik!</h1>
 
+        <button id="dotaznik_tlac" onclick="funkSkrytie()">Podme nato!</button>
+        
+        <article id="prva_cast" class="tlacidla">
+            <button onclick="funkSkrytie2()">Vysoka</button>
+            <button onclick="funkSkrytie2()">Pracovať</button>
+            <button onclick="funkSkrytie2()">Este neviem</button>
+        </article>
+
+        <article id="druha_cast" class="tlacidla">
+            <button onclick="funkSkrytie3()">Samé jednotky a dvojky</button>
+            <button onclick="funkSkrytie3()">Priemer (dvojky a trojky)</button>
+            <button onclick="funkSkrytie3()">Horšie ako trojky</button>
+        </article>
+
+        <article id="tretia_cast" class="tlacidla">
+            <button onclick="funkSkrytie4()">Všeobecný prehľad (zo všetkého niečo)</button>
+            <button onclick="funkSkrytie4()">Odborné predmety a prax (konkrétne zameranie)</button>
+        </article>
+
+        <script>
+            document.getElementById("prva_cast").style.display = "none"
+            document.getElementById("druha_cast").style.display = "none"
+            document.getElementById("tretia_cast").style.display = "none"
+            function funkSkrytie(){
+                document.getElementById("text1").style.display = "none"
+                document.getElementById("dotaznik_tlac").style.display = "none"
+                document.getElementById("prva_cast").style.display = "flex"
+            }
+            function funkSkrytie2(){
+                document.getElementById("prva_cast").style.display = "none"
+                document.getElementById("druha_cast").style.display = "flex"
+            }
+            function funkSkrytie3(){
+                document.getElementById("druha_cast").style.display = "none"
+                document.getElementById("tretia_cast").style.display = "flex"
+            }
+            function funkSkrytie4(){
+                document.getElementById("tretia_cast").style.display = "none"
+            }
+        </script>
+    </main>
+    <footer>
+        <a target="_blank" href="https://www.youtube.com/">instagramy</a>
+        <a target="_blank" href="https://www.youtube.com/">facebooky</a>
+        <a target="_blank" href="https://www.youtube.com/">socky</a>
+    </footer>
+</body>
+</html>
