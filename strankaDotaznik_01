@@ -11,7 +11,18 @@
         <h1 id="nadpis">GlobeSchool</h1>
     </header>
     <main>
-        <h1 id="text1">Sprav si rychly dotaznik!</h1>
+        <h1 id="text1" class="hlavny_text">Sprav si rychly dotaznik!</h1>
+        <h1 id="text2" class="hlavny_text">Čo plánuješ po strednej škole?</h1>
+        <h1 id="text3" class="hlavny_text">Aké máš približne známky na vysvedčení?</h1>
+        <h1 id="text4" class="hlavny_text">Aký typ učenia ti vyhovuje viac?</h1>
+        <h1 id="text5" class="hlavny_text">Ktorá oblasť ťa baví najviac?</h1>
+        <h1 id="text6" class="hlavny_text">Aký je tvoj vzťah k matematike a fyzike?</h1>
+        <h1 id="text7" class="hlavny_text">Chceš študovať v cudzom jazyku (bilingválne)?</h1>
+        <h1 id="text8" class="hlavny_text">Si ochotný/á ísť na talentové skúšky?</h1>
+        <h1 id="text9" class="hlavny_text">Chceš skôr sedieť za počítačom/v lavici, alebo niečo tvoriť rukami?</h1>
+        <h1 id="text10" class="hlavny_text">Aký typ školy preferuješ?</h1>
+        <h1 id="text11" class="hlavny_text">Chceš školu s maturitou, alebo stačí výučný list?</h1>
+        <h1 id="text12" class="hlavny_text">TU SA ZOBRAZI MAPA S MOZNOSTAMI</h1>
 
         <button id="dotaznik_tlac" onclick="funkSkrytie()">Podme nato!</button>
         
@@ -32,25 +43,137 @@
             <button onclick="funkSkrytie4()">Odborné predmety a prax (konkrétne zameranie)</button>
         </article>
 
+        <article id="stvrta_cast" class="tlacidla">
+            <button onclick="funkSkrytie5()">IT, programovanie a moderné technológie</button>
+            <button onclick="funkSkrytie5()">Stroje, autá, elektrotechnika a stavby</button>
+            <button onclick="funkSkrytie5()">Obchod, peniaze, právo a manažment</button>
+            <button onclick="funkSkrytie5()">Medicína, chémia, príroda a zvieratá</button>
+            <button onclick="funkSkrytie5()">Umenie, dizajn, médiá a kreativita</button>
+            <button onclick="funkSkrytie5()">Jazyky, história a práca s ľuďmi</button>
+            <button onclick="funkSkrytie5()">Gastronómia, služby a remeslá</button>
+        </article>
+
+        <article id="piata_cast" class="tlacidla">
+            <button onclick="funkSkrytie6()">Mám ich rád/rada a idú mi</button>
+            <button onclick="funkSkrytie6()">Zvládam ich, ale nevyhľadávam ich</button>
+            <button onclick="funkSkrytie6()">Chcem sa im čo najviac vyhnúť</button>
+        </article>
+
+        <article id="siesta_cast" class="tlacidla">
+            <button onclick="funkSkrytie7()">Áno, chcem bilingválnu školu</button>
+            <button onclick="funkSkrytie7()">Stačí mi klasická výučba jazykov</button>
+            <button onclick="funkSkrytie7()">Jazyky nie sú moja silná stránka</button>
+        </article>
+
+        <article id="siedma_cast" class="tlacidla">
+            <button onclick="funkSkrytie8()">Áno (umenie, šport, bilingválne)</button>
+            <button onclick="funkSkrytie8()">Nie, chcem len klasické prijímačky</button>
+        </article>
+
+        <article id="osma_cast" class="tlacidla">
+            <button onclick="funkSkrytie9()">Za počítačom / v lavici</button>
+            <button onclick="funkSkrytie9()">V dielni / v teréne / v pohybe</button>
+            <button onclick="funkSkrytie9()">Kombinácia oboch</button>
+        </article>
+
+        <article id="deviata_cast" class="tlacidla">
+            <button onclick="funkSkrytie10()">Štátna (bez školného)</button>
+            <button onclick="funkSkrytie10()">Cirkevná</button>
+            <button onclick="funkSkrytie10()">Súkromná (nevadí mi školné)</button>
+            <button onclick="funkSkrytie10()">Je mi to jedno</button>
+        </article>
+
+        <article id="desiata_cast" class="tlacidla">
+            <button onclick="funkSkrytie11()">Určite s maturitou</button>
+            <button onclick="funkSkrytie11()">Stačí mi výučný list (3-ročný odbor)</button>
+        </article>
+
         <script>
+            document.getElementById("text2").style.display = "none"
+            document.getElementById("text3").style.display = "none"
+            document.getElementById("text4").style.display = "none"
+            document.getElementById("text5").style.display = "none"
+            document.getElementById("text6").style.display = "none"
+            document.getElementById("text7").style.display = "none"
+            document.getElementById("text8").style.display = "none"
+            document.getElementById("text9").style.display = "none"
+            document.getElementById("text10").style.display = "none"
+            document.getElementById("text11").style.display = "none"
+            document.getElementById("text12").style.display = "none"
             document.getElementById("prva_cast").style.display = "none"
             document.getElementById("druha_cast").style.display = "none"
             document.getElementById("tretia_cast").style.display = "none"
+            document.getElementById("stvrta_cast").style.display = "none"
+            document.getElementById("piata_cast").style.display = "none"
+            document.getElementById("siesta_cast").style.display = "none"
+            document.getElementById("siedma_cast").style.display = "none"
+            document.getElementById("osma_cast").style.display = "none"
+            document.getElementById("deviata_cast").style.display = "none"
+            document.getElementById("desiata_cast").style.display = "none"
             function funkSkrytie(){
                 document.getElementById("text1").style.display = "none"
+                document.getElementById("text2").style.display = "flex"
                 document.getElementById("dotaznik_tlac").style.display = "none"
                 document.getElementById("prva_cast").style.display = "flex"
             }
             function funkSkrytie2(){
+                document.getElementById("text2").style.display = "none"
+                document.getElementById("text3").style.display = "flex"
                 document.getElementById("prva_cast").style.display = "none"
                 document.getElementById("druha_cast").style.display = "flex"
             }
             function funkSkrytie3(){
+                document.getElementById("text3").style.display = "none"
+                document.getElementById("text4").style.display = "flex"
                 document.getElementById("druha_cast").style.display = "none"
                 document.getElementById("tretia_cast").style.display = "flex"
             }
             function funkSkrytie4(){
+                document.getElementById("text4").style.display = "none"
+                document.getElementById("text5").style.display = "flex"
                 document.getElementById("tretia_cast").style.display = "none"
+                document.getElementById("stvrta_cast").style.display = "flex"
+            }
+            function funkSkrytie5(){
+                document.getElementById("text5").style.display = "none"
+                document.getElementById("text6").style.display = "flex"
+                document.getElementById("stvrta_cast").style.display = "none"
+                document.getElementById("piata_cast").style.display = "flex"
+            }
+            function funkSkrytie6(){
+                document.getElementById("text6").style.display = "none"
+                document.getElementById("text7").style.display = "flex"
+                document.getElementById("piata_cast").style.display = "none"
+                document.getElementById("siesta_cast").style.display = "flex"
+            }
+            function funkSkrytie7(){
+                document.getElementById("text7").style.display = "none"
+                document.getElementById("text8").style.display = "flex"
+                document.getElementById("siesta_cast").style.display = "none"
+                document.getElementById("siedma_cast").style.display = "flex"
+            }
+            function funkSkrytie8(){
+                document.getElementById("text8").style.display = "none"
+                document.getElementById("text9").style.display = "flex"
+                document.getElementById("siedma_cast").style.display = "none"
+                document.getElementById("osma_cast").style.display = "flex"
+            }
+            function funkSkrytie9(){
+                document.getElementById("text9").style.display = "none"
+                document.getElementById("text10").style.display = "flex"
+                document.getElementById("osma_cast").style.display = "none"
+                document.getElementById("deviata_cast").style.display = "flex"
+            }
+            function funkSkrytie10(){
+                document.getElementById("text10").style.display = "none"
+                document.getElementById("text11").style.display = "flex"
+                document.getElementById("deviata_cast").style.display = "none"
+                document.getElementById("desiata_cast").style.display = "flex"
+            }
+            function funkSkrytie11(){
+                document.getElementById("text11").style.display = "none"
+                document.getElementById("desiata_cast").style.display = "none"
+                document.getElementById("text12").style.display = "flex"
             }
         </script>
     </main>
@@ -90,7 +213,7 @@ main{
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        gap: 10px;
+        gap: 70px;
         flex-grow: 1;
         #dotaznik_tlac{
             border-radius: 5px;
@@ -98,13 +221,16 @@ main{
             border: 0;
             color: rgb(15, 91, 255);
             background: white;
+            font-size: 20px;
+            width: 200px;
+            height: 50px;
             transition: 250ms;
             &:hover{
                 background-color: rgb(201, 200, 200);
                 color: black;
             }
         }
-        #text1{
+        .hlavny_text{
             color: white;
             font-size: 100px;
             text-align: center;
