@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="dotaznik.css">
     <title>GlobeSchool</title>
 </head>
 <body>  
     <header>
+        <a id="odkazDomov" href="index.html">Domov</a>
         <h1 id="nadpis">GlobeSchool</h1>
     </header>
     <main>
@@ -25,70 +26,90 @@
         <h1 id="text12" class="hlavny_text">TU SA ZOBRAZI MAPA S MOZNOSTAMI</h1>
 
         <button id="dotaznik_tlac" onclick="funkSkrytie()">Podme nato!</button>
-        
-        <article id="prva_cast" class="tlacidla">
-            <button onclick="funkSkrytie2()">Vysoka</button>
-            <button onclick="funkSkrytie2()">Pracovať</button>
-            <button onclick="funkSkrytie2()">Este neviem</button>
+
+        <div class="triedaTlacidla">
+            <article id="prva_cast" class="triedaTlacidla2">
+                <button id="tl1" class="tlacidla" onclick="funkTl1(); odpovede.push('ciel_vs')">Vysoka</button>
+                <button id="tl2" class="tlacidla" onclick="funkTl2(); odpovede.push('ciel_praca')">Pracovať</button>
+                <button id="tl3" class="tlacidla" onclick="funkTl3(); odpovede.push('ciel_neviem')">Este neviem</button>
+            </article>
+            <div>
+                <button id="dalsie_tlac" onclick="funkDalsie()">→</button>
+            </div>
+        </div>
+
+        <article id="druha_cast" class="triedaTlacidla">
+            <button id="tl4" class="tlacidla" onclick="funkSkrytie3(); odpovede.push('znamky_vyborne')">Samé jednotky a dvojky</button>
+            <button id="tl5" class="tlacidla" onclick="funkSkrytie3(); odpovede.push('znamky_priemer')">Priemer (dvojky a trojky)</button>
+            <button id="tl6" class="tlacidla" onclick="funkSkrytie3(); odpovede.push('znamky_slabsie')">Horšie ako trojky</button>
+            <button id="dalsie_tlac" onclick="funkDalsie()">→</button>
         </article>
 
-        <article id="druha_cast" class="tlacidla">
-            <button onclick="funkSkrytie3()">Samé jednotky a dvojky</button>
-            <button onclick="funkSkrytie3()">Priemer (dvojky a trojky)</button>
-            <button onclick="funkSkrytie3()">Horšie ako trojky</button>
+        <article id="tretia_cast" class="triedaTlacidla">
+            <button id="tl7" class="tlacidla" onclick="funkSkrytie4(); odpovede.push('styl_vseobecny')">Všeobecný prehľad (zo všetkého niečo)</button>
+            <button id="tl8" class="tlacidla" onclick="funkSkrytie4(); odpovede.push('styl_odborny')">Odborné predmety a prax (konkrétne zameranie)</button>
+            <button id="dalsie_tlac" onclick="funkDalsie()">→</button>
         </article>
 
-        <article id="tretia_cast" class="tlacidla">
-            <button onclick="funkSkrytie4()">Všeobecný prehľad (zo všetkého niečo)</button>
-            <button onclick="funkSkrytie4()">Odborné predmety a prax (konkrétne zameranie)</button>
+        <article id="stvrta_cast" class="triedaTlacidla">
+            <button id="tl9" class="tlacidla" onclick="funkSkrytie5(); odpovede.push('obor_it')">IT, programovanie a moderné technológie</button>
+            <button id="tl10" class="tlacidla" onclick="funkSkrytie5(); odpovede.push('obor_technika')">Stroje, autá, elektrotechnika a stavby</button>
+            <button id="tl11" class="tlacidla" onclick="funkSkrytie5(); odpovede.push('obor_ekonomika')">Obchod, peniaze, právo a manažment</button>
+            <button id="tl12" class="tlacidla" onclick="funkSkrytie5(); odpovede.push('obor_priroda_zdravie')">Medicína, chémia, príroda a zvieratá</button>
+            <button id="tl13" class="tlacidla" onclick="funkSkrytie5(); odpovede.push('obor_umenie')">Umenie, dizajn, médiá a kreativita</button>
+            <button id="tl14" class="tlacidla" onclick="funkSkrytie5(); odpovede.push('obor_humanitne')">Jazyky, história a práca s ľuďmi</button>
+            <button id="tl15" class="tlacidla" onclick="funkSkrytie5(); odpovede.push('obor_sluzby_gastro')">Gastronómia, služby a remeslá</button>
+            <button id="dalsie_tlac" onclick="funkDalsie()">→</button>
         </article>
 
-        <article id="stvrta_cast" class="tlacidla">
-            <button onclick="funkSkrytie5()">IT, programovanie a moderné technológie</button>
-            <button onclick="funkSkrytie5()">Stroje, autá, elektrotechnika a stavby</button>
-            <button onclick="funkSkrytie5()">Obchod, peniaze, právo a manažment</button>
-            <button onclick="funkSkrytie5()">Medicína, chémia, príroda a zvieratá</button>
-            <button onclick="funkSkrytie5()">Umenie, dizajn, médiá a kreativita</button>
-            <button onclick="funkSkrytie5()">Jazyky, história a práca s ľuďmi</button>
-            <button onclick="funkSkrytie5()">Gastronómia, služby a remeslá</button>
+        <article id="piata_cast" class="triedaTlacidla">
+            <button id="tl16" class="tlacidla" onclick="funkSkrytie6(); odpovede.push('matika_super')">Mám ich rád/rada a idú mi</button>
+            <button id="tl17" class="tlacidla" onclick="funkSkrytie6(); odpovede.push('matika_ok')">Zvládam ich, ale nevyhľadávam ich</button>
+            <button id="tl18" class="tlacidla" onclick="funkSkrytie6(); odpovede.push('matika_nie')">Chcem sa im čo najviac vyhnúť</button>
+            <button id="dalsie_tlac" onclick="funkDalsie()">→</button>
         </article>
 
-        <article id="piata_cast" class="tlacidla">
-            <button onclick="funkSkrytie6()">Mám ich rád/rada a idú mi</button>
-            <button onclick="funkSkrytie6()">Zvládam ich, ale nevyhľadávam ich</button>
-            <button onclick="funkSkrytie6()">Chcem sa im čo najviac vyhnúť</button>
+        <article id="siesta_cast" class="triedaTlacidla">
+            <button id="tl19" class="tlacidla" onclick="funkSkrytie7(); odpovede.push('jazyk_bilingval')">Áno, chcem bilingválnu školu</button>
+            <button id="tl20" class="tlacidla" onclick="funkSkrytie7(); odpovede.push('jazyk_klasik')">Stačí mi klasická výučba jazykov</button>
+            <button id="tl21" class="tlacidla" onclick="funkSkrytie7(); odpovede.push('jazyk_slaby')">Jazyky nie sú moja silná stránka</button>
+            <button id="dalsie_tlac" onclick="funkDalsie()">→</button>
         </article>
 
-        <article id="siesta_cast" class="tlacidla">
-            <button onclick="funkSkrytie7()">Áno, chcem bilingválnu školu</button>
-            <button onclick="funkSkrytie7()">Stačí mi klasická výučba jazykov</button>
-            <button onclick="funkSkrytie7()">Jazyky nie sú moja silná stránka</button>
+        <article id="siedma_cast" class="triedaTlacidla">
+            <button id="tl22" class="tlacidla" onclick="funkSkrytie8(); odpovede.push('talentovky_ano')">Áno (umenie, šport, bilingválne)</button>
+            <button id="tl23" class="tlacidla" onclick="funkSkrytie8(); odpovede.push('talentovky_nie')">Nie, chcem len klasické prijímačky</button>
+            <button id="dalsie_tlac" onclick="funkDalsie()">→</button>
         </article>
 
-        <article id="siedma_cast" class="tlacidla">
-            <button onclick="funkSkrytie8()">Áno (umenie, šport, bilingválne)</button>
-            <button onclick="funkSkrytie8()">Nie, chcem len klasické prijímačky</button>
+        <article id="osma_cast" class="triedaTlacidla">
+            <button id="tl24" class="tlacidla" onclick="funkSkrytie9(); odpovede.push('praca_pocitac_lavica')">Za počítačom / v lavici</button>
+            <button id="tl25" class="tlacidla" onclick="funkSkrytie9(); odpovede.push('praca_dielna_teren')">V dielni / v teréne / v pohybe</button>
+            <button id="tl26" class="tlacidla" onclick="funkSkrytie9(); odpovede.push('praca_kombinacia ')">Kombinácia oboch</button>
+            <button id="dalsie_tlac" onclick="funkDalsie()">→</button>
         </article>
 
-        <article id="osma_cast" class="tlacidla">
-            <button onclick="funkSkrytie9()">Za počítačom / v lavici</button>
-            <button onclick="funkSkrytie9()">V dielni / v teréne / v pohybe</button>
-            <button onclick="funkSkrytie9()">Kombinácia oboch</button>
+        <article id="deviata_cast" class="triedaTlacidla">
+            <button id="tl27" class="tlacidla" onclick="funkSkrytie10(); odpovede.push('typ_statna')">Štátna (bez školného)</button>
+            <button id="tl28" class="tlacidla" onclick="funkSkrytie10(); odpovede.push('typ_cirkevna')">Cirkevná</button>
+            <button id="tl29" class="tlacidla" onclick="funkSkrytie10(); odpovede.push('typ_sukromna')">Súkromná (nevadí mi školné)</button>
+            <button id="tl30" class="tlacidla" onclick="funkSkrytie10(); odpovede.push('typ_jedno')">Je mi to jedno</button>
+            <button id="dalsie_tlac" onclick="funkDalsie()">→</button>
         </article>
 
-        <article id="deviata_cast" class="tlacidla">
-            <button onclick="funkSkrytie10()">Štátna (bez školného)</button>
-            <button onclick="funkSkrytie10()">Cirkevná</button>
-            <button onclick="funkSkrytie10()">Súkromná (nevadí mi školné)</button>
-            <button onclick="funkSkrytie10()">Je mi to jedno</button>
+        <article id="desiata_cast" class="triedaTlacidla">
+            <button id="tl31" class="tlacidla" onclick="funkSkrytie11(); odpovede.push('ukoncenie_maturita')">Určite s maturitou</button>
+            <button id="tl32" class="tlacidla" onclick="funkSkrytie11(); odpovede.push('ukoncenie_vyucny')">Stačí mi výučný list (3-ročný odbor)</button>
+            <button id="dalsie_tlac" onclick="funkDalsie()">→</button>
         </article>
 
-        <article id="desiata_cast" class="tlacidla">
-            <button onclick="funkSkrytie11()">Určite s maturitou</button>
-            <button onclick="funkSkrytie11()">Stačí mi výučný list (3-ročný odbor)</button>
-        </article>
+        <p id="textik"></p>
 
         <script>
+            const odpovede = [];
+            let text = odpovede;
+
+            document.getElementById("dalsie_tlac").style.display = "none"
             document.getElementById("text2").style.display = "none"
             document.getElementById("text3").style.display = "none"
             document.getElementById("text4").style.display = "none"
@@ -111,69 +132,107 @@
             document.getElementById("deviata_cast").style.display = "none"
             document.getElementById("desiata_cast").style.display = "none"
             function funkSkrytie(){
+                document.getElementById("dotaznik_tlac").style.display = "none"
                 document.getElementById("text1").style.display = "none"
                 document.getElementById("text2").style.display = "flex"
-                document.getElementById("dotaznik_tlac").style.display = "none"
                 document.getElementById("prva_cast").style.display = "flex"
+                document.getElementById("dalsie_tlac").style.display = "flex"
             }
-            function funkSkrytie2(){
-                document.getElementById("text2").style.display = "none"
-                document.getElementById("text3").style.display = "flex"
-                document.getElementById("prva_cast").style.display = "none"
-                document.getElementById("druha_cast").style.display = "flex"
+            function funkTl1(){
+                document.getElementById("tl1").classList.toggle("tlacidla2")
             }
-            function funkSkrytie3(){
-                document.getElementById("text3").style.display = "none"
-                document.getElementById("text4").style.display = "flex"
-                document.getElementById("druha_cast").style.display = "none"
-                document.getElementById("tretia_cast").style.display = "flex"
+            function funkTl2(){
+                document.getElementById("tl2").classList.toggle("tlacidla2")
             }
-            function funkSkrytie4(){
-                document.getElementById("text4").style.display = "none"
-                document.getElementById("text5").style.display = "flex"
-                document.getElementById("tretia_cast").style.display = "none"
-                document.getElementById("stvrta_cast").style.display = "flex"
+            function funkTl3(){
+                document.getElementById("tl3").classList.toggle("tlacidla2")
             }
-            function funkSkrytie5(){
-                document.getElementById("text5").style.display = "none"
-                document.getElementById("text6").style.display = "flex"
-                document.getElementById("stvrta_cast").style.display = "none"
-                document.getElementById("piata_cast").style.display = "flex"
+            function funkTl4(){
+                document.getElementById("tl4").classList.toggle("tlacidla2")
             }
-            function funkSkrytie6(){
-                document.getElementById("text6").style.display = "none"
-                document.getElementById("text7").style.display = "flex"
-                document.getElementById("piata_cast").style.display = "none"
-                document.getElementById("siesta_cast").style.display = "flex"
+            function funkTl5(){
+                document.getElementById("tl5").classList.toggle("tlacidla2")
             }
-            function funkSkrytie7(){
-                document.getElementById("text7").style.display = "none"
-                document.getElementById("text8").style.display = "flex"
-                document.getElementById("siesta_cast").style.display = "none"
-                document.getElementById("siedma_cast").style.display = "flex"
+            function funkTl6(){
+                document.getElementById("tl6").classList.toggle("tlacidla2")
             }
-            function funkSkrytie8(){
-                document.getElementById("text8").style.display = "none"
-                document.getElementById("text9").style.display = "flex"
-                document.getElementById("siedma_cast").style.display = "none"
-                document.getElementById("osma_cast").style.display = "flex"
+            function funkTl7(){
+                document.getElementById("tl7").classList.toggle("tlacidla2")
             }
-            function funkSkrytie9(){
-                document.getElementById("text9").style.display = "none"
-                document.getElementById("text10").style.display = "flex"
-                document.getElementById("osma_cast").style.display = "none"
-                document.getElementById("deviata_cast").style.display = "flex"
+            function funkTl8(){
+                document.getElementById("tl8").classList.toggle("tlacidla2")
             }
-            function funkSkrytie10(){
-                document.getElementById("text10").style.display = "none"
-                document.getElementById("text11").style.display = "flex"
-                document.getElementById("deviata_cast").style.display = "none"
-                document.getElementById("desiata_cast").style.display = "flex"
+            function funkTl9(){
+                document.getElementById("tl9").classList.toggle("tlacidla2")
             }
-            function funkSkrytie11(){
-                document.getElementById("text11").style.display = "none"
-                document.getElementById("desiata_cast").style.display = "none"
-                document.getElementById("text12").style.display = "flex"
+            function funkTl10(){
+                document.getElementById("tl10").classList.toggle("tlacidla2")
+            }
+            function funkTl11(){
+                document.getElementById("tl11").classList.toggle("tlacidla2")
+            }
+            function funkTl12(){
+                document.getElementById("tl12").classList.toggle("tlacidla2")
+            }
+            function funkTl13(){
+                document.getElementById("tl13").classList.toggle("tlacidla2")
+            }
+            function funkTl14(){
+                document.getElementById("tl14").classList.toggle("tlacidla2")
+            }
+            function funkTl15(){
+                document.getElementById("tl15").classList.toggle("tlacidla2")
+            }
+            function funkTl16(){
+                document.getElementById("tl16").classList.toggle("tlacidla2")
+            }
+            function funkTl17(){
+                document.getElementById("tl17").classList.toggle("tlacidla2")
+            }
+            function funkTl18(){
+                document.getElementById("tl18").classList.toggle("tlacidla2")
+            }
+            function funkTl19(){
+                document.getElementById("tl19").classList.toggle("tlacidla2")
+            }
+            function funkTl20(){
+                document.getElementById("tl20").classList.toggle("tlacidla2")
+            }
+            function funkTl21(){
+                document.getElementById("tl21").classList.toggle("tlacidla2")
+            }
+            function funkTl22(){
+                document.getElementById("tl22").classList.toggle("tlacidla2")
+            }
+            function funkTl23(){
+                document.getElementById("tl23").classList.toggle("tlacidla2")
+            }
+            function funkTl24(){
+                document.getElementById("tl24").classList.toggle("tlacidla2")
+            }
+            function funkTl25(){
+                document.getElementById("tl25").classList.toggle("tlacidla2")
+            }
+            function funkTl26(){
+                document.getElementById("tl26").classList.toggle("tlacidla2")
+            }
+            function funkTl27(){
+                document.getElementById("tl27").classList.toggle("tlacidla2")
+            }
+            function funkTl28(){
+                document.getElementById("tl28").classList.toggle("tlacidla2")
+            }
+            function funkTl29(){
+                document.getElementById("tl29").classList.toggle("tlacidla2")
+            }
+            function funkTl30(){
+                document.getElementById("tl30").classList.toggle("tlacidla2")
+            }
+            function funkTl31(){
+                document.getElementById("tl31").classList.toggle("tlacidla2")
+            }
+            function funkTl32(){
+                document.getElementById("tl32").classList.toggle("tlacidla2")
             }
         </script>
     </main>
@@ -184,7 +243,6 @@
     </footer>
 </body>
 </html>
-
 --------------------------------------------------------------------------------------------------------------------
 * {
     margin: 0;
@@ -201,50 +259,83 @@ body {
 
 header{
         background: rgb(1, 112, 216);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         h1{
             color: white;
             padding: 10px; 
-            text-align: center;
+            display: inline;
+            justify-self: center;
+        }
+        #odkazDomov{
+            padding: 25px;
         }
     }
 
 main{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 70px;
-        flex-grow: 1;
-        #dotaznik_tlac{
-            border-radius: 5px;
-            padding: 5px;
-            border: 0;
-            color: rgb(15, 91, 255);
-            background: white;
-            font-size: 20px;
-            width: 200px;
-            height: 50px;
-            transition: 250ms;
-            &:hover{
-                background-color: rgb(201, 200, 200);
-                color: black;
-            }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 70px;
+    flex-grow: 1;
+    #dotaznik_tlac{
+        border-radius: 5px;
+        padding: 5px;
+        border: 0;
+        color: rgb(15, 91, 255);
+        background: white;
+        font-size: 20px;
+        width: 200px;
+        height: 50px;
+        transition: 250ms;
+        &:hover{
+            background-color: rgb(201, 200, 200);
+            color: black;
         }
-        .hlavny_text{
-            color: white;
-            font-size: 100px;
-            text-align: center;
-        }
+    }
+    .hlavny_text{
+        color: white;
+        font-size: 70px;
+        text-align: center;
+    }
         
 }
 
-.tlacidla{
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    gap: 20px;
+#dalsie_tlac{
+    border-radius: 5px;
+    padding: 5px;
+    border: 0;
+    color: rgb(15, 91, 255);
+    background: white;
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    &:hover{
+        color: black;
+        background-color: rgb(201, 200, 200);
+    }
 }
-.tlacidla button{
+
+#stvrta_cast{
+    width: 250px;
+    gap: 15px;
+}
+
+.triedaTlacidla{
+    display: grid;
+    grid-template-columns: 500px 100px;
+    .triedaTlacidla2{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        gap: 20px;
+    }
+}
+
+
+
+.tlacidla{
     padding: 10px;
     border-radius: 6px;
     color: rgb(15, 91, 255);
@@ -258,6 +349,16 @@ main{
         background-color: rgb(201, 200, 200);
     }
 }
+
+.tlacidla2{
+    padding: 10px;
+    border-radius: 20px;
+    color: black;
+    font-weight: 700;
+    background: rgb(201, 200, 200);
+    border: 0;
+}
+
 
 footer{
     margin-top: auto;
